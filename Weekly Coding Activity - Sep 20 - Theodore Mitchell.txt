@@ -1,0 +1,33 @@
+Salesforce:
+
+"Declarative customisations" when it comes to Salesforce refers to customizations made with Salesforce's online point-and-click tools as opposed to code.  This includes using formula fields, roll-up summaries, workflows, process builder, and flow builder.  "Programmatic customisations" refers to customizations made programmatically, such as Apex code, Apex triggers, Visualforce pages, Aura components, and Lightning Web Components.  It is generally considered best practice to use declarative tools if possible, and to only use programmatic tools if the declarative tools are not powerful enough for a given task.
+
+JavaScript:
+
+function getHashTags(articleTitle) {
+
+  let list = articleTitle.toLowerCase().split(/[ ,]+/);
+  let wordLengths = [];
+  for (const word of list) {
+    if (!wordLengths.includes(word.length) && word.length > 0) {
+    	wordLengths.push(word.length);
+    }
+  }
+  wordLengths.sort((a,b) => b - a);
+  
+  let rankedWords = [];
+  
+  for (const length of wordLengths) {
+  	let wordsOfThisLength = list.filter(a => a.length === length);
+    rankedWords = rankedWords.concat(wordsOfThisLength);
+  }
+  rankedWords = rankedWords.slice(0,3).map((a) => '#' + a);
+  
+  return rankedWords;
+}
+
+console.log(getHashTags('tbnars ar tttt rs tarnstneariosnt ar st aresnt '));
+console.log(getHashTags("How the Avocado Became the Fruit of the Global Trade"));
+console.log(getHashTags("Why You Will Probably Pay More for Your Christmas Tree This Year"));
+console.log(getHashTags("Hey Parents, Surprise, Fruit Juice Is Not Fruit"));
+console.log(getHashTags("Visualizing Science"));
