@@ -1,23 +1,23 @@
 function oddishOrEvenish(input) {
 	let inputAsString = input.toString();
-    let totalNumber = 0;
-    for (let i = 0; i < inputAsString.length; i++) {
-    	totalNumber += parseInt(inputAsString[i]);
-    }
-    
+	let totalNumber = 0;
+	for (let i = 0; i < inputAsString.length; i++) {
+		totalNumber += parseInt(inputAsString[i]);
+	}
+
 	return totalNumber % 2 == 0 ? "Evenish" : "Oddish";
 }
 
 function doubleSwap(input,char1,char2) {
 	let outputString = "";
 	for (let i = 0; i < input.length; i++) {
-    	if (input[i] == char1) {
-        	outputString = outputString + char2;
-        } else if (input[i] == char2) {
-        	outputString = outputString + char1;
-        } else {
-        	outputString = outputString + input[i];
-        }
-    }
-    return outputString;
+		if (input[i] == char1) {
+			outputString = outputString + char2;
+		} else if (input[i] == char2) {
+			outputString = outputString + char1;
+		} else {
+			outputString = outputString + input[i];
+		}
+	}
+	return outputString;
 }
