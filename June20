@@ -1,6 +1,6 @@
 Swift:
 
-func squares(num1: Int, num2: Int) -> Int {
+func squares(_ num1: Int, _ num2: Int) -> Int {
     let root1 = sqrt(Double(num1))
     let root2 = sqrt(Double(num2))
     return Int(floor(root2)) - Int(ceil(root1)) + 1
