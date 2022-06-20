@@ -13,3 +13,14 @@ function squares(num1, num2) {
     let root2 = Math.sqrt(num2);
     return Math.floor(root2) - Math.ceil(root1) + 1;
 }
+
+Swift version 2:
+(can handle negative inputs and switches around inputs if num1 > num2)
+
+func squares(_ num1: Int, _ num2: Int) -> Int {
+    guard num1 >= 0 || num2 >= 0 else { return 0 }
+    guard num1 <= num2 else { return squares(num2,num1) }
+    let root1 = sqrt(Double(num1 < 0 ? 0 : num1))
+    let root2 = sqrt(Double(num2))
+    return Int(floor(root2)) - Int(ceil(root1)) + 1
+}
